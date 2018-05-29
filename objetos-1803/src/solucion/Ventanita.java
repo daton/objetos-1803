@@ -106,7 +106,8 @@ public class Ventanita extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-     TransformacionGrados trans=     (TransformacionGrados) jComboBox1.getSelectedItem();
+     TransformacionGrados trans=  
+             (TransformacionGrados) jComboBox1.getSelectedItem();
      jLabel2.setText(""+trans.transformar(Float.parseFloat(jTextField1.getText())));
      
      
