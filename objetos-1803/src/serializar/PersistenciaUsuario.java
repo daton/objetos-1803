@@ -12,7 +12,7 @@ public class PersistenciaUsuario {
     public static void guardar(Cliente c)throws Exception{
       //Paso 1 generar el archivo donde se va a guardar
       //nuestro serializado
-      File file=new File("/home/campitos/Documents/archivaldo.yomero");
+      File file=new File("archivaldo.yomero");
       
      //Paso 2 es indicar que lo vamos a generar para escribir en el
       
@@ -22,6 +22,15 @@ public class PersistenciaUsuario {
     ObjectOutputStream oos=new ObjectOutputStream(fos);
      oos.writeObject(c);
      oos.close();
+    }
+    
+    public static Cliente leer()throws Exception{
+        //Para leer primero ponemos el archivo
+        File file=new File("archivaldo.yomero");
+        FileInputStream fis=new FileInputStream(file);
+        ObjectInputStream ois= new ObjectInputStream(fis);
+     Cliente c= (Cliente) ois.readObject();
+     return c;
     }
     
 }
